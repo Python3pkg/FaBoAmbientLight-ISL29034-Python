@@ -12,12 +12,17 @@
 
 import FaBoAmbientLight_ISL29034
 import time
+import sys
 
 light = FaBoAmbientLight_ISL29034.ISL29034()
 
-while True:
-    lux  = light.read()
+try:
+    while True:
 
-    print "Lux  = ", lux
-    print
-    time.sleep(1)
+        lux  = light.read()
+
+        print "Lux = ", lux
+        time.sleep(0.5)
+
+except KeyboardInterrupt:
+    sys.exit()

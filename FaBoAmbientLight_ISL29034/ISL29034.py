@@ -48,8 +48,9 @@ bus = smbus.SMBus(1)
 class ISL29034:
 
     ## Constructor
-    def __init__(self):
-        self.address    = SLAVE_ADDRESS
+    #  @param [in] address PCF2129 i2c slave_address default:0x44
+    def __init__(self, address=SLAVE_ADDRESS):
+        self.address    = address
         self.range      = FS_0
         self.resolution = RES_16
 
