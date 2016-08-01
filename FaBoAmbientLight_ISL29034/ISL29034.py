@@ -1,6 +1,6 @@
 # coding: utf-8
-## @package FaBoRTC_PCF2129
-#  This is a library for the FaBo Ambient Light I2C Brick.
+## @package ISL29034
+#  This is a FaBoAmbientLight_ISL29034 library for the FaBo Ambient Light I2C Brick.
 #
 #  http://fabo.io/217.html
 #
@@ -13,8 +13,10 @@
 import smbus
 import time
 
-SLAVE_ADDRESS = 0x44 # ISL29034 I2C Slave Address
-DEVICE_ID     = 0x28 # ISL29034 Device ID(xx101xxx)
+## ISL29034 I2C Slave Address
+SLAVE_ADDRESS = 0x44
+# ISL29034 Device ID(xx101xxx)
+DEVICE_ID     = 0x28
 
 # Register Addresses
 REG_CMD1    = 0x00
@@ -44,7 +46,7 @@ ID_MASK = 0x38 # ISL29034 Device ID Mask(00111000)
 ## smbus
 bus = smbus.SMBus(1)
 
-##  FaBo Ambient Light I2C Controll class
+## FaBo Ambient Light I2C Controll class
 class ISL29034:
 
     ## Constructor
