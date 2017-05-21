@@ -21,7 +21,7 @@ try:
 
         lux  = light.read()
 
-        print "Lux = ", lux
+        print("Lux = ", lux)
         time.sleep(0.5)
 
 except KeyboardInterrupt:
